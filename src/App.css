@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  @variants responsive {
+
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* Hide scrollbar for IE, Edge and Firefox */
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      /* IE and Edge */
+      scrollbar-width: none;
+      /* Firefox */
+    }
+  }
+}
+
+.react-quiz-container .result-answer-wrapper .tag-container{
+  margin: 0px !important;
+  visibility: hidden !important;
+  height: 0 !important;
+}
+
+.react-quiz-container .quiz-result-filter{
+  visibility: hidden !important;
+}
+
+.react-quiz-container .tag-container{
+  margin: 0px !important;
+  visibility: hidden !important;
+  height: 0 !important;
+}
+
+.react-quiz-container .startQuizWrapper .startQuizBtn{
+  background-color: #000000 !important;
+    border: 1px solid #000000 !important;
+    border-radius: 0px !important;
+    color: #fff !important;
+    padding-left: 30px  !important;
+    padding-right: 30px  !important;
+    font-size: 15px !important;
+    line-height: 1.35135 !important;
+}
+
+.react-quiz-container h2{
+  font-size: 20px !important;
+  font-weight: bold;
+}
+
+.custom-shadow {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.toastBody {
+  font-family: 'Roboto', sans-serif;
+  color: #000;
+}
+
+.toastProgress {
+  background: #000 !important;
+}
+
+.toastBodyDark {
+  font-family: 'Roboto', sans-serif;
+  color: #fff;
+}
+
+.toastProgressDark {
+  background: #fff !important;
+}
+
+.textarea-container {
+  position: relative;
+}
+
+.textarea {
+  resize: none;
+  overflow-y: hidden;
+}
+
+.textarea::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
+}
+
+.rsw-toolbar{
+  border-bottom: 0 !important;
+  border-radius: 0 !important;
+}
+
+.rsw-editor {
+  border: 0  !important;
+  border-radius: 0 !important;
+}
