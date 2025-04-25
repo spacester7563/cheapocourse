@@ -1,0 +1,9 @@
+body {
+  direction: rtl;
+  text-align: right;
+}
+
+/* Example: reverse the order of flex items */
+.flex-row {
+  flex-direction: row-reverse;
+}
