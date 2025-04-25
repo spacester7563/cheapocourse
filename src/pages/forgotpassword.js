@@ -9,9 +9,10 @@ import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import axios from 'axios';
 import { AiOutlineLoading } from 'react-icons/ai';
+import { useTranslation } from 'react-i18next';
 
 const ForgotPassword = () => {
-
+    const { t } = useTranslation();
     const storedTheme = sessionStorage.getItem('darkMode');
     const [email, setEmail] = useState('');
     const [processing, setProcessing] = useState(false);
@@ -69,7 +70,7 @@ const ForgotPassword = () => {
     const handleReset = async (e) => {
         e.preventDefault();
         if (!email) {
-            showToast('Please fill in all required fields');
+            showToast(t('Please fill in all required fields'));
             return;
         }
         const postURL = serverURL + '/api/forgot';
@@ -84,7 +85,7 @@ const ForgotPassword = () => {
                 showToast(response.data.message);
             }
         } catch (error) {
-            showToast('Internal Server Error');
+            showToast(t('Internal Server Error'));
         }
     };
 
@@ -104,20 +105,20 @@ const ForgotPassword = () => {
 
                     <form onSubmit={handleReset} className="max-w-sm m-auto py-9 no-scrollbar">
 
-                        <h1 className='text-center font-black text-5xl text-black dark:text-white'>Forgot Password</h1>
-                        <p className='text-center font-normal text-black py-4 dark:text-white'>Enter the registered email and a reset link will be sent to that email</p>
+                        <h1 className='text-center font-black text-5xl text-black dark:text-white'>{t('Forgot Password')}</h1>
+                        <p className='text-center font-normal text-black py-4 dark:text-white'>{t('Enter the registered email and a reset link will be sent to that email')}</p>
 
                         <div className='py-10'>
                             <div className='mb-6'>
                                 <div className="mb-2 block">
-                                    <Label className="font-bold text-black dark:text-white" htmlFor="email1" value="Email" />
+                                    <Label className="font-bold text-black dark:text-white" htmlFor="email1" value={t("Email")} />
                                 </div>
                                 <input onChange={(e) => setEmail(e.target.value)} className='focus:ring-black focus:border-black border border-black font-normal bg-white rounded-none block w-full dark:bg-black dark:border-white dark:text-white' id="email1" type="email" />
                             </div>
 
-                            <Button disabled={isTimerRunning} isProcessing={processing} processingSpinner={<AiOutlineLoading className="h-6 w-6 animate-spin" />} className='items-center justify-center text-center dark:bg-white dark:text-black bg-black text-white font-bold rounded-none w-full enabled:hover:bg-black enabled:focus:bg-black enabled:focus:ring-transparent dark:enabled:hover:bg-white dark:enabled:focus:bg-white dark:enabled:focus:ring-transparent' type="submit">Submit</Button>
-                            <p hidden={!isTimerRunning} className='text-center font-normal text-black py-2 dark:text-white'>Resend link again in {formattedTime} seconds</p>
-                            <p onClick={redirectSignUp} className='text-center font-normal text-black underline py-4  dark:text-white'>Already know password? SignIn</p>
+                            <Button disabled={isTimerRunning} isProcessing={processing} processingSpinner={<AiOutlineLoading className="h-6 w-6 animate-spin" />} className='items-center justify-center text-center dark:bg-white dark:text-black bg-black text-white font-bold rounded-none w-full enabled:hover:bg-black enabled:focus:bg-black enabled:focus:ring-transparent dark:enabled:hover:bg-white dark:enabled:focus:bg-white dark:enabled:focus:ring-transparent' type="submit">{t('Submit')}</Button>
+                            <p hidden={!isTimerRunning} className='text-center font-normal text-black py-2 dark:text-white'>{t('Resend link again in')} {formattedTime} {t('seconds')}</p>
+                            <p onClick={redirectSignUp} className='text-center font-normal text-black underline py-4  dark:text-white'>{t('Already know password? SignIn')}</p>
                         </div>
 
                     </form>

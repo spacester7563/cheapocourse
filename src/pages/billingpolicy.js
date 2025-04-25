@@ -4,9 +4,10 @@ import Footers from '../components/footers';
 import { serverURL } from '../constants';
 import axios from 'axios';
 import StyledText from '../components/styledText';
+import { useTranslation } from 'react-i18next';
 
 const BillingPolicy = () => {
-
+    const { t } = useTranslation();
     const [data, setData] = useState([]);
 
     useEffect(() => {
@@ -23,7 +24,7 @@ const BillingPolicy = () => {
             <Header isHome={false} className="sticky top-0 z-50" />
             <div className='dark:bg-black flex-1'>
                 <div className='flex-1 flex items-center justify-center py-10 flex-col'>
-                    <p className='text-center font-black text-4xl text-black dark:text-white'>Subscription & Billing Policy</p>
+                    <p className='text-center font-black text-4xl text-black dark:text-white'>{t("Subscription & Billing Policy")}</p>
                     <div className='w-4/5 py-20'><StyledText text={data.billing} /></div>
                 </div>
             </div>

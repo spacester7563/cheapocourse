@@ -45,9 +45,11 @@ import { googleClientId } from './constants';
 import Shareable from './pages/shareable';
 import Exam from './pages/exam';
 import { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 
 function App() {
   const [isRTL, setIsRTL] = useState(false);
+  const { t, i18n } = useTranslation();
 
   useEffect(() => {
     if (isRTL) {
@@ -61,11 +63,32 @@ function App() {
     setIsRTL(!isRTL);
   };
 
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
+    localStorage.setItem('language', lng);
+  };
+
+  useEffect(() => {
+    const storedLanguage = localStorage.getItem('language');
+    if (storedLanguage) {
+      i18n.changeLanguage(storedLanguage);
+      if (storedLanguage === 'ar') {
+        setIsRTL(true);
+      } else {
+        setIsRTL(false);
+      }
+    }
+  }, [i18n]);
+
   return (
     <GoogleOAuthProvider clientId={googleClientId}>
       <Router>
         <div className={isRTL ? 'rtl' : ''}>
           <button onClick={toggleRTL}>Toggle RTL</button>
+          <div>
+            <button onClick={() => changeLanguage('en')}>English</button>
+            <button onClick={() => changeLanguage('ar')}>Arabic</button>
+          </div>
           <ToastContainer
             limit={3}
             progressClassName={sessionStorage.getItem('darkMode') === 'true' ? "toastProgressDark" : "toastProgress"}

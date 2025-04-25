@@ -7,9 +7,10 @@ import AdminSidebarMobile from './components/adminsidebarmobile';
 import { serverURL } from '../constants';
 import axios from 'axios';
 import AdminTable from './components/adminstable';
+import { useTranslation } from 'react-i18next';
 
 const Admins = () => {
-
+    const { t } = useTranslation();
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
     const [admins, setAdmin] = useState([]);
     const [users, setUser] = useState([]);
@@ -38,7 +39,7 @@ const Admins = () => {
                         <div>
                             <Navbar fluid className='py-3 dark:bg-black bg-white border-black dark:text-white dark:border-white md:border-b'>
                                 <Navbar.Brand className='ml-1'>
-                                    <p className='font-black text-xl'>Admin Panel</p>
+                                    <p className='font-black text-xl'>{t("Admin Panel")}</p>
                                 </Navbar.Brand>
                                 <div className='flex md:hidden justify-center items-center'>
 

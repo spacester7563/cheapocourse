@@ -4,9 +4,10 @@ import Quiz from 'react-quiz-component';
 import { Spinner } from 'flowbite-react';
 import axios from 'axios';
 import { company, logo, serverURL } from '../constants';
+import { useTranslation } from 'react-i18next';
 
 const Exam = () => {
-
+    const { t } = useTranslation();
     const { state } = useLocation();
     const { topic, courseId, questions } = state;
     const [examJSON, setExamJSON] = useState({});
@@ -25,7 +26,7 @@ const Exam = () => {
             setPassed(true);
             const percentage = obj.numberOfCorrectAnswers*10;
             //SEND EMAIL
-            sendEmail("You Have Passed The Quiz", "You Have Passed The Quiz 🎉 Successfully with " + percentage + "%")
+            sendEmail(t("You Have Passed The Quiz"), t("You Have Passed The Quiz 🎉 Successfully with percentage %", {percentage: percentage}))
             updateResult(obj.numberOfCorrectAnswers);
         } else {
             setPassed(false);
@@ -44,7 +45,7 @@ const Exam = () => {
         const topLevelKeys = Object.keys(questions)
         const quiz = {
             "quizTitle": topic + " Quiz",
-            "quizSynopsis": "Take the quiz on " + topic + " to test your knowledge.\nYou can take infinite attempts to clear the quiz.\nPassing percentage is 50%",
+            "quizSynopsis": t("Take the quiz on topic to test your knowledge. You can take infinite attempts to clear the quiz. Passing percentage is 50%", {topic: topic}),
             "progressBarColor": "#008000",
             "nrOfQuestions": "10",
             "questions": questions[topLevelKeys[0]].map((item) => ({
@@ -105,10 +106,10 @@ const Exam = () => {
                               </tr>
                             </tbody>
                           </table>
-                          <h1 style="margin-left:0px;margin-right:0px;margin-top:30px;margin-bottom:30px;padding:0px;text-align:center;font-size:24px;font-weight:400;color:rgb(0,0,0)">${topic} Quiz Result</strong></h1>
-                          <p style="font-size:14px;line-height:24px;margin:16px 0;color:rgb(0,0,0)">Hello <strong>${userName}</strong>,</p>
-                          <p style="font-size:14px;line-height:24px;margin:16px 0;color:rgb(0,0,0)">${userName}, ${msg}</p>
-                          <p style="font-size:14px;line-height:24px;margin:16px 0;color:rgb(0,0,0)">Best,<p target="_blank" style="color:rgb(0,0,0);text-decoration:none;text-decoration-line:none">The <strong>${company}</strong> Team</p></p>
+                          <h1 style="margin-left:0px;margin-right:0px;margin-top:30px;margin-bottom:30px;padding:0px;text-align:center;font-size:24px;font-weight:400;color:rgb(0,0,0)">{t("topic Quiz Result", {topic:topic})}</strong></h1>
+                          <p style="font-size:14px;line-height:24px;margin:16px 0;color:rgb(0,0,0)">{t("Hello userName,", {userName:userName})}</p>
+                          <p style="font-size:14px;line-height:24px;margin:16px 0;color:rgb(0,0,0)">{t("userName msg", {userName:userName, msg:msg})}</p>
+                          <p style="font-size:14px;line-height:24px;margin:16px 0;color:rgb(0,0,0)">{t("Best,")} <p target="_blank" style="color:rgb(0,0,0);text-decoration:none;text-decoration-line:none">The <strong>${company}</strong> Team</p></p>
                           </td>
                       </tr>
                     </table>
@@ -142,11 +143,11 @@ const Exam = () => {
                         {completed ? <>
                             {passedQuiz ?
                                 <>
-                                    <p className='text-center font-black text-xl  mt-4 text-black dark:text-white'>You Have Passed The Quiz 🎉</p>
+                                    <p className='text-center font-black text-xl  mt-4 text-black dark:text-white'>{t("You Have Passed The Quiz 🎉")}</p>
                                 </>
                                 :
                                 <>
-                                    <p className='text-center font-black text-xl mt-4 text-black dark:text-white'>You Have Failed The Quiz 😔{'\n'}Try again</p>
+                                    <p className='text-center font-black text-xl mt-4 text-black dark:text-white'>{t("You Have Failed The Quiz 😔 {tryAgain}", {tryAgain: t("Try again")})}</p>
                                 </>}
                         </> : <></>}
 
@@ -156,7 +157,7 @@ const Exam = () => {
                                 <button onClick={() => {
                                     exitFullScreen();
                                 }} className='bg-black text-white items-center  justify-center content-center w-52 px-5 py-2 mt-1 mb-4 font-medium dark:bg-white dark:text-black'>
-                                    Finish
+                                    {t("Finish")} 
                                 </button>
                             </div>
                             : <></>}

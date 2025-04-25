@@ -9,9 +9,10 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import axios from 'axios';
 import { AiOutlineLoading } from 'react-icons/ai';
+import { useTranslation } from 'react-i18next';
 
 const ResetPassword = () => {
-
+    const { t } = useTranslation();
     const storedTheme = sessionStorage.getItem('darkMode');
     const [password, setPassword] = useState('');
     const [confirmpassword, setConfirmPassword] = useState('');
@@ -52,13 +53,13 @@ const ResetPassword = () => {
     const handleReset = async (e) => {
         e.preventDefault();
         if (!password || !confirmpassword) {
-            showToast('Please fill in all required fields');
+            showToast(t('Please fill in all required fields'));
             return;
         } else if (password !== confirmpassword) {
-            showToast('The password and confirm password do not match');
+            showToast(t('The password and confirm password do not match'));
             return;
         } else if (password.length < 9) {
-            showToast('Password should be at least 9 characters');
+            showToast(t('Password should be at least 9 characters'));
             return;
         }
         const postURL = serverURL + '/api/reset-password';
@@ -73,7 +74,7 @@ const ResetPassword = () => {
                 showToast(response.data.message);
             }
         } catch (error) {
-            showToast('Internal Server Error');
+            showToast(t('Internal Server Error'));
         }
     };
 
@@ -102,12 +103,12 @@ const ResetPassword = () => {
                               </tr>
                             </tbody>
                           </table>
-                          <h1 style="margin-left:0px;margin-right:0px;margin-top:30px;margin-bottom:30px;padding:0px;text-align:center;font-size:24px;font-weight:400;color:rgb(0,0,0)">Password Updated</h1>
-                          <p style="font-size:14px;line-height:24px;margin:16px 0;color:rgb(0,0,0)">Your account ${mEmail} has had its password updated.</p>
+                          <h1 style="margin-left:0px;margin-right:0px;margin-top:30px;margin-bottom:30px;padding:0px;text-align:center;font-size:24px;font-weight:400;color:rgb(0,0,0)">{t("Password Updated")}</h1>
+                          <p style="font-size:14px;line-height:24px;margin:16px 0;color:rgb(0,0,0)">{t("Your account")} ${mEmail} {t("has had its password updated.")}</p>
                           <table align="center" border="0" cellPadding="0" cellSpacing="0" role="presentation" width="100%" style="margin-bottom:32px;margin-top:32px;text-align:center">
                             <tbody>
                               <tr>
-                                <td><a href="${signInLink}" target="_blank" style="p-x:20px;p-y:12px;line-height:100%;text-decoration:none;display:inline-block;max-width:100%;padding:12px 20px;border-radius:0.25rem;background-color:rgb(0,0,0);text-align:center;font-size:12px;font-weight:600;color:rgb(255,255,255);text-decoration-line:none"><span></span><span style="p-x:20px;p-y:12px;max-width:100%;display:inline-block;line-height:120%;text-decoration:none;text-transform:none;mso-padding-alt:0px;mso-text-raise:9px"</span><span>SignIn</span></a></td>
+                                <td><a href="${signInLink}" target="_blank" style="p-x:20px;p-y:12px;line-height:100%;text-decoration:none;display:inline-block;max-width:100%;padding:12px 20px;border-radius:0.25rem;background-color:rgb(0,0,0);text-align:center;font-size:12px;font-weight:600;color:rgb(255,255,255);text-decoration-line:none"><span></span><span style="p-x:20px;p-y:12px;max-width:100%;display:inline-block;line-height:120%;text-decoration:none;text-transform:none;mso-padding-alt:0px;mso-text-raise:9px"</span><span>{t("SignIn")}</span></a></td>
                               </tr>
                             </tbody>
                           </table>
@@ -148,23 +149,23 @@ const ResetPassword = () => {
 
                     <form onSubmit={handleReset} className="max-w-sm m-auto py-9 no-scrollbar">
 
-                        <h1 className='text-center font-black text-5xl text-black dark:text-white'>Reset Password</h1>
-                        <p className='text-center font-normal text-black py-4 dark:text-white'>Enter your new password</p>
+                        <h1 className='text-center font-black text-5xl text-black dark:text-white'>{t('Reset Password')}</h1>
+                        <p className='text-center font-normal text-black py-4 dark:text-white'>{t('Enter your new password')}</p>
 
                         <div className='py-10'>
                             <div className='mb-4'>
                                 <div className="mb-2 block">
-                                    <Label className="font-bold text-black dark:text-white" htmlFor="password1" value="Password" />
+                                    <Label className="font-bold text-black dark:text-white" htmlFor="password1" value={t("Password")} />
                                 </div>
                                 <input onChange={(e) => setPassword(e.target.value)} className='focus:ring-black focus:border-black border border-black font-normal bg-white rounded-none block w-full dark:bg-black dark:border-white dark:text-white' id="password1" type="password" />
                             </div>
                             <div className='mb-4'>
                                 <div className="mb-2 block">
-                                    <Label className="font-bold text-black dark:text-white" htmlFor="password2" value="Confirm Password" />
+                                    <Label className="font-bold text-black dark:text-white" htmlFor="password2" value={t("Confirm Password")} />
                                 </div>
                                 <input onChange={(e) => setConfirmPassword(e.target.value)} className='focus:ring-black focus:border-black border border-black font-normal bg-white rounded-none block w-full dark:bg-black dark:border-white dark:text-white' id="password2" type="password" />
                             </div>
-                            <Button isProcessing={processing} processingSpinner={<AiOutlineLoading className="h-6 w-6 animate-spin" />} className='items-center justify-center text-center dark:bg-white dark:text-black bg-black text-white font-bold rounded-none w-full enabled:hover:bg-black enabled:focus:bg-black enabled:focus:ring-transparent dark:enabled:hover:bg-white dark:enabled:focus:bg-white dark:enabled:focus:ring-transparent' type="submit">Submit</Button>
+                            <Button isProcessing={processing} processingSpinner={<AiOutlineLoading className="h-6 w-6 animate-spin" />} className='items-center justify-center text-center dark:bg-white dark:text-black bg-black text-white font-bold rounded-none w-full enabled:hover:bg-black enabled:focus:bg-black enabled:focus:ring-transparent dark:enabled:hover:bg-white dark:enabled:focus:bg-white dark:enabled:focus:ring-transparent' type="submit">{t('Submit')}</Button>
                         </div>
 
                     </form>

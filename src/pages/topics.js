@@ -7,9 +7,10 @@ import { AiOutlineLoading } from 'react-icons/ai';
 import { serverURL } from '../constants';
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import { useTranslation } from 'react-i18next';
 
 const Topics = () => {
-
+    const { t } = useTranslation();
     const { state } = useLocation();
     const [processing, setProcessing] = useState(false);
     const { jsonData, mainTopic, type, lang } = state || {};
@@ -258,10 +259,10 @@ const Topics = () => {
                 <div>
                     <div className='max-md:max-w-sm max-sm:max-w-xs max-w-lg m-auto py-10'>
                         <h1 style={{ textTransform: 'uppercase' }} className='text-4xl text-black font-black text-center dark:text-white' >{mainTopic}</h1>
-                        <p className='text-center font-bold mt-2 text-base text-black dark:text-white'>List of topics and subtopics course will cover</p>
+                        <p className='text-center font-bold mt-2 text-base text-black dark:text-white'>{t("List of topics and subtopics course will cover")}</p>
                         {jsonData && renderTopicsAndSubtopics(jsonData[mainTopic])}
-                        <Button onClick={redirectCourse} isProcessing={processing} processingSpinner={<AiOutlineLoading className="h-6 w-6 animate-spin" />} className='items-center justify-center text-center dark:bg-white dark:text-black bg-black text-white font-bold rounded-none w-full enabled:hover:bg-black enabled:focus:bg-black enabled:focus:ring-transparent dark:enabled:hover:bg-white dark:enabled:focus:bg-white dark:enabled:focus:ring-transparent mt-10 mb-2'>Generate Course</Button>
-                        <Button onClick={redirectCreate} type="button" className='mb-6 items-center justify-center text-center border-black dark:border-white dark:bg-black dark:text-white bg-white text-black font-bold rounded-none w-full enabled:hover:bg-white enabled:focus:bg-white enabled:focus:ring-transparent dark:enabled:hover:bg-black dark:enabled:focus:bg-black dark:enabled:focus:ring-transparent'>Go Back</Button>
+                        <Button onClick={redirectCourse} isProcessing={processing} processingSpinner={<AiOutlineLoading className="h-6 w-6 animate-spin" />} className='items-center justify-center text-center dark:bg-white dark:text-black bg-black text-white font-bold rounded-none w-full enabled:hover:bg-black enabled:focus:bg-black enabled:focus:ring-transparent dark:enabled:hover:bg-white dark:enabled:focus:bg-white dark:enabled:focus:ring-transparent mt-10 mb-2'>{t("Generate Course")}</Button>
+                        <Button onClick={redirectCreate} type="button" className='mb-6 items-center justify-center text-center border-black dark:border-white dark:bg-black dark:text-white bg-white text-black font-bold rounded-none w-full enabled:hover:bg-white enabled:focus:bg-white enabled:focus:ring-transparent dark:enabled:hover:bg-black dark:enabled:focus:bg-black dark:enabled:focus:ring-transparent'>{t("Go Back")}</Button>
                     </div>
 
                 </div>

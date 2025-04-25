@@ -9,15 +9,16 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { toPng } from 'html-to-image';
 import { name } from '../constants';
+import { useTranslation } from 'react-i18next';
 
 const Certificate = () => {
-
+    const { t } = useTranslation();
     const [processing, setProcessing] = useState(false);
     const userName = sessionStorage.getItem('mName');
     const { state } = useLocation();
-    const navigate = useNavigate();
     const { courseTitle, end } = state || {};
 
+    const navigate = useNavigate();
     const pdfRef = useRef(null);
 
     const handleDownload = async () => {
@@ -29,7 +30,7 @@ const Certificate = () => {
                 link.download = "certificate.png";
                 link.href = dataUrl;
                 link.click();
-                showToast("Downloaded")
+                showToast(t("Downloaded"))
             })
             .catch((err) => {
                 //DO NOTHING
@@ -96,9 +97,9 @@ const Certificate = () => {
             <Header isHome={true} className="sticky top-0 z-50" />
             <div className='dark:bg-black flex-1'>
                 <div className='flex-1 flex flex-col items-center justify-center py-8'>
-                    <p className='text-center font-black text-4xl text-black dark:text-white'>Congratulations🎉</p>
-                    <p className='text-center font-normal text-black py-4 dark:text-white'><strong>{userName}</strong> on completion of course <strong>{courseTitle}</strong>. <br></br> Download your certificate</p>
-                    <Button onClick={handleDownload} isProcessing={processing} processingSpinner={<AiOutlineLoading className="h-6 w-6 animate-spin" />} className='items-center justify-center rounded-none text-center dark:bg-white  bg-black text-white dark:text-black font-bold max-w-sm enabled:hover:bg-black enabled:focus:bg-black enabled:focus:ring-transparent dark:enabled:hover:bg-black dark:enabled:focus:bg-black dark:enabled:focus:ring-transparent' type="submit">Download</Button>
+                    <p className='text-center font-black text-4xl text-black dark:text-white'>{t("Congratulations🎉")}</p>
+                    <p className='text-center font-normal text-black py-4 dark:text-white'>{t("userName on completion of course courseTitle. Download your certificate", {userName: userName, courseTitle: courseTitle})} </p>
+                    <Button onClick={handleDownload} isProcessing={processing} processingSpinner={<AiOutlineLoading className="h-6 w-6 animate-spin" />} className='items-center justify-center rounded-none text-center dark:bg-white  bg-black text-white dark:text-black font-bold max-w-sm enabled:hover:bg-black enabled:focus:bg-black enabled:focus:ring-transparent dark:enabled:hover:bg-black dark:enabled:focus:bg-black dark:enabled:focus:ring-transparent' type="submit">{t("Download")}</Button>
                 </div>
                 <div className='relative lg:mx-40 max-lg:m-20 max-md:m-2'>
                     <div ref={pdfRef}>

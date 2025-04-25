@@ -12,9 +12,10 @@ import { AiOutlineLoading } from 'react-icons/ai';
 import { GoogleLogin } from '@react-oauth/google';
 import { jwtDecode } from "jwt-decode";
 import FacebookLogin from '@greatsumini/react-facebook-login';
+import { useTranslation } from 'react-i18next';
 
 const SignIn = () => {
-
+    const { t } = useTranslation();
     const storedTheme = sessionStorage.getItem('darkMode');
     const [email, setEmail] = useState('');
     const [processing, setProcessing] = useState(false);
@@ -57,7 +58,7 @@ const SignIn = () => {
     const handleSignin = async (e) => {
         e.preventDefault();
         if (!email || !password) {
-            showToast('Please fill in all required fields');
+            showToast(t('Please fill in all required fields'));
             return;
         }
         const postURL = serverURL + '/api/signin';
@@ -80,7 +81,7 @@ const SignIn = () => {
                 showToast(response.data.message);
             }
         } catch (error) {
-            showToast('Internal Server Error');
+            showToast(t('Internal Server Error'));
         }
     };
 
@@ -125,27 +126,27 @@ const SignIn = () => {
 
                     <form onSubmit={handleSignin} className="max-w-sm m-auto py-9 no-scrollbar">
 
-                        <h1 className='text-center font-black text-5xl text-black dark:text-white'>SignIn</h1>
-                        <p className='text-center font-normal text-black py-4 dark:text-white'>Enter email & password to continue</p>
+                        <h1 className='text-center font-black text-5xl text-black dark:text-white'>{t('SignIn')}</h1>
+                        <p className='text-center font-normal text-black py-4 dark:text-white'>{t('Enter email & password to continue')}</p>
 
                         <div className='py-10'>
                             <div className='mb-6'>
                                 <div className="mb-2 block">
-                                    <Label className="font-bold text-black dark:text-white" htmlFor="email1" value="Email" />
+                                    <Label className="font-bold text-black dark:text-white" htmlFor="email1" value={t("Email")} />
                                 </div>
                                 <input onChange={(e) => setEmail(e.target.value)} className='focus:ring-black focus:border-black border border-black font-normal bg-white rounded-none block w-full dark:bg-black dark:border-white dark:text-white' id="email1" type="email" />
                             </div>
                             <div className='mb-4'>
                                 <div className="mb-2 block">
-                                    <Label className="font-bold text-black dark:text-white" htmlFor="password1" value="Password" />
+                                    <Label className="font-bold text-black dark:text-white" htmlFor="password1" value={t("Password")} />
                                 </div>
                                 <input onChange={(e) => setPassword(e.target.value)} className='focus:ring-black focus:border-black border border-black font-normal bg-white rounded-none block w-full dark:bg-black dark:border-white dark:text-white' id="password1" type="password" />
                             </div>
                             <div className="flex items-center mb-10">
-                                <p onClick={redirectForgot} className='text-center font-normal text-black underline dark:text-white'>Forgot Password ?</p>
+                                <p onClick={redirectForgot} className='text-center font-normal text-black underline dark:text-white'>{t('Forgot Password ?')}</p>
                             </div>
-                            <Button isProcessing={processing} processingSpinner={<AiOutlineLoading className="h-6 w-6 animate-spin" />} className='items-center justify-center text-center dark:bg-white dark:text-black bg-black text-white font-bold rounded-none w-full enabled:hover:bg-black enabled:focus:bg-black enabled:focus:ring-transparent dark:enabled:hover:bg-white dark:enabled:focus:bg-white dark:enabled:focus:ring-transparent' type="submit">Submit</Button>
-                            <p onClick={redirectSignUp} className='text-center font-normal text-black underline py-4  dark:text-white'>Don't have an account ? SignUp</p>
+                            <Button isProcessing={processing} processingSpinner={<AiOutlineLoading className="h-6 w-6 animate-spin" />} className='items-center justify-center text-center dark:bg-white dark:text-black bg-black text-white font-bold rounded-none w-full enabled:hover:bg-black enabled:focus:bg-black enabled:focus:ring-transparent dark:enabled:hover:bg-white dark:enabled:focus:bg-white dark:enabled:focus:ring-transparent' type="submit">{t('Submit')}</Button>
+                            <p onClick={redirectSignUp} className='text-center font-normal text-black underline py-4  dark:text-white'>{t("Don't have an account ? SignUp")}</p>
 
                             {/* <GoogleLogin
                                 theme='outline'

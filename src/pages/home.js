@@ -2,8 +2,10 @@ import React from 'react';
 import Header from '../components/header';
 import Footers from '../components/footers';
 import UserCourses from '../components/usercourses';
+import { useTranslation } from 'react-i18next';
 
 const Home = () => {
+    const { t } = useTranslation();
 
     return (
         <div className='h-screen flex flex-col'>

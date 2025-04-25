@@ -9,8 +9,10 @@ import SlideFive from '../components/landing/slideFive';
 import SlideSix from '../components/landing/slideSix';
 import { serverURL } from '../constants';
 import axios from 'axios';
+import { useTranslation } from 'react-i18next';
 
 const Landing = () => {
+    const { t } = useTranslation();
 
     useEffect(() => {
         async function dashboardData() {

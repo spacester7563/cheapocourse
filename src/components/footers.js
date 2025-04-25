@@ -4,8 +4,10 @@ import Logo from '../res/img/logo.svg';
 import DarkLogo from '../res/img/darkLogo.svg';
 import { company, websiteURL } from '../constants';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const Footers = () => {
+  const { t } = useTranslation();
   const storedTheme = sessionStorage.getItem('darkMode');
 
   const navigate = useNavigate();
@@ -33,16 +35,16 @@ const Footers = () => {
           />
           <Footer.LinkGroup>
             <p className="text-black font-bold mx-4 dark:text-white" onClick={redirectAbout}>
-              About
+              {t("About")}
             </p>
             <p className="text-black  font-bold  mx-4 dark:text-white" onClick={redirectPrivacy}>
-              Privacy Policy
+              {t("Privacy Policy")}
             </p>
             <p className="text-black  font-bold  mx-4 dark:text-white " onClick={redirectTerms}>
-              Terms
+              {t("Terms")}
             </p>
             <p className="text-black  font-bold  mx-4 dark:text-white" onClick={redirectContact}>
-              Contact
+              {t("Contact")}
             </p>
           </Footer.LinkGroup>
         </div>
