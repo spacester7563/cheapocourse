@@ -58,7 +58,7 @@ const Certificate = () => {
 
         // Handle invalid date scenarios
         if (isNaN(dateObj.getTime())) {
-            throw new Error("Invalid date");
+            throw new Error(t("Invalid date"));
         }
 
         // Format the date to M/D/YY
@@ -103,7 +103,7 @@ const Certificate = () => {
                 </div>
                 <div className='relative lg:mx-40 max-lg:m-20 max-md:m-2'>
                     <div ref={pdfRef}>
-                        <img src={Logos} alt="logo" />
+                        <img src={Logos} alt={t("logo")} />
                         <p className='absolute text-4xl font-black italic max-lg:text-2xl max-md:text-xl' style={{ top: '47%', left: '50%', transform: 'translate(-50%, -50%)' }}>
                             {sessionStorage.getItem('mName')}
                         </p>

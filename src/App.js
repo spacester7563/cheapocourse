@@ -48,47 +48,33 @@ import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 
 function App() {
-  const [isRTL, setIsRTL] = useState(false);
   const { t, i18n } = useTranslation();
+  const [language, setLanguage] = useState(sessionStorage.getItem('language') || 'en');
 
   useEffect(() => {
-    if (isRTL) {
-      document.body.classList.add('rtl');
-    } else {
-      document.body.classList.remove('rtl');
-    }
-  }, [isRTL]);
-
-  const toggleRTL = () => {
-    setIsRTL(!isRTL);
-  };
-
-  const changeLanguage = (lng) => {
-    i18n.changeLanguage(lng);
-    localStorage.setItem('language', lng);
-  };
-
-  useEffect(() => {
-    const storedLanguage = localStorage.getItem('language');
+    const storedLanguage = sessionStorage.getItem('language');
     if (storedLanguage) {
       i18n.changeLanguage(storedLanguage);
-      if (storedLanguage === 'ar') {
-        setIsRTL(true);
-      } else {
-        setIsRTL(false);
-      }
+      setLanguage(storedLanguage);
     }
-  }, [i18n]);
+    if (storedLanguage === 'ar') {
+      document.body.classList.add('rtl');
+      document.body.classList.remove('ltr');
+    } else {
+      document.body.classList.add('ltr');
+      document.body.classList.remove('rtl');
+    }
+  }, [i18n, language]);
 
   return (
     <GoogleOAuthProvider clientId={googleClientId}>
       <Router>
-        <div className={isRTL ? 'rtl' : ''}>
-          <button onClick={toggleRTL}>Toggle RTL</button>
+        <div>
+          {/* <button onClick={toggleRTL}>Toggle RTL</button>
           <div>
             <button onClick={() => changeLanguage('en')}>English</button>
             <button onClick={() => changeLanguage('ar')}>Arabic</button>
-          </div>
+          </div> */}
           <ToastContainer
             limit={3}
             progressClassName={sessionStorage.getItem('darkMode') === 'true' ? "toastProgressDark" : "toastProgress"}

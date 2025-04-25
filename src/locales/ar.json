@@ -1,59 +1,58 @@
 {
-  "welcome": "Welcome to our website!",
-  "about": "Welcome to our website!",
-  "home": "Home",
-  "features": "Features",
-  "pricing": "Pricing",
-  "contact": "Contact",
-  "login": "Login",
-  "signup": "Sign Up",
-  "SignIn": "Sign In",
-  "Enter email & password to continue": "Enter email & password to continue",
-  "Email": "Email",
-  "Password": "Password",
-  "Forgot Password ?": "Forgot Password ?",
-  "Submit": "Submit",
-  "Don't have an account ? SignUp": "Don't have an account ? Sign Up",
-  "Please fill in all required fields": "Please fill in all required fields",
-  "Internal Server Error": "Internal Server Error",
-  "SignUp": "Sign Up",
-  "Name": "Name",
-  "Already have an account ? SignIn": "Already have an account ? Sign In",
-  "Password should be at least 9 characters": "Password should be at least 9 characters",
-  "Forgot Password": "Forgot Password",
-  "Enter the registered email and a reset link will be sent to that email": "Enter the registered email and a reset link will be sent to that email",
-  "Resend link again in": "Resend link again in",
-  "seconds": "seconds",
-  "Already know password? SignIn": "Already know password? Sign In",
-  "Reset Password": "Reset Password",
-  "Enter your new password": "Enter your new password",
-  "Confirm Password": "Confirm Password",
-  "The password and confirm password do not match": "The password and confirm password do not match",
-   "Your account": "Your account",
-  "has had its password updated.": "has had its password updated.",
-  "Password Updated": "Password Updated",
-  "Generate Course": "Generate Course",
-  "Type the topic on which you want to Generate course.": "Type the topic on which you want to Generate course.",
-  "Also, you can enter a list of subtopics, which are the specifics you want to learn.": "Also, you can enter a list of subtopics, which are the specifics you want to learn.",
-  "Topic": "Topic",
-  "Sub Topic": "Sub Topic",
-  "Add Sub-Topic": "Add Sub-Topic",
-  "Remove Sub-Topic": "Remove Sub-Topic",
-  "Select number of sub topics": "Select number of sub topics",
-  "Select Course Type": "Select Course Type",
-  "Theory & Image Course": "Theory & Image Course",
-  "Video & Theory Course": "Video & Theory Course",
-  "Course Language": "Course Language",
-  "For free member sub topics is limited to 5": "For free member sub topics is limited to 5",
-  "You can only add 5 sub topics": "You can only add 5 sub topics",
-  "For paid members only": "For paid members only",
-  "List of topics and subtopics course will cover": "List of topics and subtopics course will cover",
-  "Go Back": "Go Back",
-  "Congratulations🎉": "Congratulations🎉",
+  "welcome": "مرحبًا بكم في موقعنا!",
+  "about": "معلومات عنا",
+  "home": "الرئيسية",
+  "features": "الميزات",
+  "pricing": "التسعير",
+  "contact": "اتصل",
+  "login": "تسجيل الدخول",
+  "signup": "اشتراك",
+  "SignIn": "تسجيل الدخول",
+  "Enter email & password to continue": "أدخل البريد الإلكتروني وكلمة المرور للمتابعة",
+  "Email": "البريد الإلكتروني",
+  "Password": "كلمة المرور",
+  "Forgot Password ?": "هل نسيت كلمة المرور؟",
+  "Submit": "إرسال",
+  "Don't have an account ? SignUp": "ليس لديك حساب؟ اشترك",
+  "Please fill in all required fields": "يرجى ملء جميع الحقول المطلوبة",
+  "Internal Server Error": "خطأ في الخادم الداخلي",
+  "SignUp": "اشتراك",
+  "Name": "اسم",
+  "Already have an account ? SignIn": "هل لديك حساب بالفعل؟ تسجيل الدخول",
+  "Password should be at least 9 characters": "يجب أن تتكون كلمة المرور من 9 أحرف على الأقل",
+  "Forgot Password": "هل نسيت كلمة المرور",
+  "Enter the registered email and a reset link will be sent to that email": "أدخل البريد الإلكتروني المسجل وسيتم إرسال رابط إعادة تعيين إلى هذا البريد الإلكتروني",
+  "Resend link again in": "إعادة إرسال الرابط مرة أخرى في",
+  "seconds": "ثواني",
+  "Already know password? SignIn": "هل تعرف كلمة المرور بالفعل؟ تسجيل الدخول",
+  "Reset Password": "إعادة تعيين كلمة المرور",
+  "Enter your new password": "أدخل كلمة مرورك الجديدة",
+  "Confirm Password": "تأكيد كلمة المرور",
+  "The password and confirm password do not match": "كلمة المرور وتاكيد كلمة المرور غير متطابقتين",
+   "Your account": "حسابك",
+  "has had its password updated.": "تم تحديث كلمة المرور الخاصة به.",
+  "Password Updated": "تم تحديث كلمة المرور",
+  "Generate Course": "إنشاء دورة",
+  "Type the topic on which you want to Generate course.": "اكتب الموضوع الذي تريد إنشاء دورة عنه.",
+  "Also, you can enter a list of subtopics, which are the specifics you want to learn.": "أيضًا ، يمكنك إدخال قائمة بالموضوعات الفرعية ، وهي التفاصيل التي تريد تعلمها.",
+  "Topic": "موضوع",
+  "Sub Topic": "موضوع فرعي",
+  "Add Sub-Topic": "أضف موضوعًا فرعيًا",
+  "Remove Sub-Topic": "إزالة موضوع فرعي",
+  "Select number of sub topics": "حدد عدد الموضوعات الفرعية",
+  "Select Course Type": "حدد نوع الدورة",
+  "Theory & Image Course": "دورة نظرية وصورة",
+  "Video & Theory Course": "دورة فيديو ونظرية",
+  "Course Language": "لغة الدورة",
+  "For free member sub topics is limited to 5": "بالنسبة للعضو المجاني ، يقتصر عدد الموضوعات الفرعية على 5",
+  "You can only add 5 sub topics": "يمكنك فقط إضافة 5 موضوعات فرعية",
+  "For paid members only": "لأعضاء مدفوعين فقط",
+  "List of topics and subtopics course will cover": "قائمة الموضوعات والموضوعات الفرعية التي ستغطيها الدورة",
+  "Go Back": "الرجوع",
+  "Congratulations🎉": "تهانينا🎉",
   "userName on completion of course courseTitle. Download your certificate": "{{userName}} على إتمام دورة {{courseTitle}}. قم بتنزيل شهادتك",
   "Download": "تحميل",
   "Downloaded": "تم التنزيل",
-  "About": "معلومات عنا",
   "About Us": "معلومات عنا",
   "Our Mission": "مهمتنا",
   "Join Us on the Learning Journey": "انضم إلينا في رحلة التعلم",
@@ -63,7 +62,6 @@
   "Embark on a journey of innovation and educational excellence with name. Whether you're an educator, a professional, or an organization looking to elevate your learning programs, company is here to support you every step of the way.": "انطلق في رحلة من الابتكار والتميز التعليمي مع {{name}}. سواء كنت معلمًا أو محترفًا أو مؤسسة تتطلع إلى الارتقاء ببرامج التعلم الخاصة بك ، فإن {{company}} هنا لدعمك في كل خطوة على الطريق.",
   "Subscription & Billing Policy": "سياسة الاشتراك والفوترة",
   "Cancellation Policy": "سياسة الإلغاء",
-  "Contact": "اتصل",
   "Enter your details and ask your query": "أدخل التفاصيل الخاصة بك واطرح استفسارك",
   "First Name": "الاسم الأول",
   "Last Name": "اسم العائلة",
@@ -75,12 +73,10 @@
   "Best,": "أفضل,",
   "You Have Passed The Quiz 🎉": "لقد اجتزت الاختبار بنجاح 🎉",
   "You Have Failed The Quiz 😔 {tryAgain}": "لقد فشلت في الاختبار 😔 {{tryAgain}}",
-  "Try again": "حاول مرة أخرى",
   "Finish": "إنهاء",
    "Payment Failed": "فشل الدفع",
   "Your payment failed You can start the payment process again": "فشل الدفع يمكنك بدء عملية الدفع مرة أخرى",
   "Start Again": "ابدأ من جديد",
-  "Features": "الميزات",
   "Craft your courses Instantly": "صمم الدورات التدريبية الخاصة بك على الفور",
   "Topic Input": "إدخال الموضوع",
   "Easily enter topics and subtopics with an intuitive interface": "أدخل بسهولة الموضوعات والموضوعات الفرعية بواجهة سهلة الاستخدام",
@@ -117,9 +113,90 @@
     "Terms": "شروط",
   "Admin Panel": "لوحة الإدارة",
   "Logout Successful": "تم تسجيل الخروج بنجاح",
-  "Home": "الرئيسية",
   "Profile": "حساب تعريفي",
   "Logout": "تسجيل خروج",
   "Admin": "مسؤول",
-  "Generate Course": "إنشاء دورة"
+    "byCompany": "بواسطة {{company}}",
+  "Pricing": "التسعير",
+   "DashBoard": "لوحة القيادة",
+  "Users": "المستخدمون",
+  "Courses": "الدورات",
+  "Paid Users": "المستخدمون المدفوعون",
+  "Admins": "المسؤولون",
+  "Contacts": "جهات الاتصال",
+  "Privacy": "الخصوصية",
+  "Cancellation": "إلغاء",
+  "Refund": "استرجاع",
+  "Note: Making a user admin will also make them a paid user.": "ملاحظة: سيؤدي جعل المستخدم مسؤولاً أيضًا إلى جعله مستخدمًا مدفوعًا.",
+  "Edit": "تعديل",
+  "Remove Admin": "إزالة المسؤول",
+  "Main Admin": "المسؤول الرئيسي",
+  "Add Admin": "إضافة مسؤول",
+   "Subscription & Billing": "الاشتراك والفوترة",
+   "Write your subscription & billing here in HTML format": "اكتب اشتراكك وفواتيرك هنا بتنسيق HTML",
+    "Write your cancellation here in HTML format": "اكتب الإلغاء هنا بتنسيق HTML",
+  "Title": "عنوان",
+  "Type": "نوع",
+  "UserId": "معرف المستخدم",
+   "DashBoard": "لوحة القيادة",
+  "Users": "المستخدمون",
+  "Courses": "الدورات",
+  "Paid Users": "المستخدمون المدفوعون",
+  "Admins": "المسؤولون",
+  "Contacts": "جهات الاتصال",
+  "Privacy": "الخصوصية",
+  "Cancellation": "إلغاء",
+  "Refund": "استرجاع",
+ "Users": "المستخدمون",
+  "Text": "نص",
+  "Video": "فيديو",
+  "Recurring Revenue": "الإيرادات المتكررة",
+  "Total Revenue": "إجمالي الإيرادات",
+  "Paid": "مدفوعة",
+  "Free": "مجانا",
+  "Write your refund here in HTML format": "اكتب استردادك هنا بتنسيق HTML",
+   "Admin Panel": "لوحة الإدارة",
+    "Write your privacy here in HTML format": "اكتب خصوصيتك هنا بتنسيق HTML",
+   "Next steps": "الخطوات التالية",
+  "While the name has changed, the core features you love remain the same. You can still expect:": "بينما تغير الاسم ، تظل الميزات الأساسية التي تحبها كما هي. لا يزال بإمكانك توقع:",
+  "A cloud-based development environment accessible from any device.": "بيئة تطوير قائمة على السحابة ويمكن الوصول إليها من أي جهاز.",
+  "AI coding assistance using Gemini models.": "مساعدة في الترميز بالذكاء الاصطناعي باستخدام نماذج Gemini.",
+  "The ability to import existing repos and customize your workspace.": "القدرة على استيراد المستودعات الحالية وتخصيص مساحة العمل الخاصة بك.",
+  "Support for popular frameworks and languages, including (but not limited to!) Go, Java, .NET, Python, Android, Flutter, and web (React, Angular, Vue.js, and more).": "دعم الأطر واللغات الشائعة ، بما في ذلك (على سبيل المثال لا الحصر!) Go و Java و .NET و Python و Android و Flutter والويب (React و Angular و Vue.js والمزيد).",
+  "Built-in support for emulation, testing, and debugging.": "دعم مدمج للمحاكاة والاختبار وتصحيح الأخطاء.",
+  "Real-time collaboration features.": "ميزات التعاون في الوقت الفعلي.",
+  "Firebase Studio documentation": "وثائق Firebase Studio",
+  "Get started with Firebase Studio": "ابدأ استخدام Firebase Studio",
+  "Starting Quiz": "بدء الاختبار",
+  "Try again": "حاول مرة أخرى",
+  "profile picture": "صورة الملف الشخصي",
+  "Choose the right plan for your education and future":"اختر الخطة المناسبة لتعليمك ومستقبلك",
+  "Generate 5 Sub-Topics": "إنشاء 5 موضوعات فرعية",
+  "Create Unlimited Course": "إنشاء دورات غير محدودة",
+  "Lifetime access": "الوصول مدى الحياة",
+  "Course In 23+ Languages": "الدورة متاحة بأكثر من 23 لغة",
+  "Generate 10 Sub-Topics": "إنشاء 10 موضوعات فرعية",
+  "1 Month Access": "الوصول لمدة شهر واحد",
+  "1 Year Access": "الوصول لمدة عام واحد",
+    "Ai Course Generator": "مولد دورة الذكاء الاصطناعي",
+  "Easily create personalized courses tailored to your needs. Interact with an AI teacher chat, generate courses in 23+ languages, and test your knowledge with AI-generated quizzes. Download courses for offline access and take notes as you go. Transform your learning experience today!": "أنشئ بسهولة دورات مخصصة تناسب احتياجاتك. تفاعل مع دردشة معلم الذكاء الاصطناعي ، وقم بإنشاء دورات بأكثر من 23 لغة ، واختبر معلوماتك من خلال اختبارات الذكاء الاصطناعي. قم بتنزيل الدورات للوصول إليها دون اتصال بالإنترنت وقم بتدوين الملاحظات أثناء التنقل. قم بتحويل تجربة التعلم الخاصة بك اليوم!",
+  "Your Alt Text": "النص البديل الخاص بك",
+   "Desktop App": "تطبيق سطح المكتب",
+   "Create personalized courses, interact with an AI teacher, access content offline{'
+'}and test your knowledge with AI-generated quizzes all in one desktop app.": "أنشئ دورات مخصصة ، وتفاعل مع معلم يعمل بالذكاء الاصطناعي ، وقم بالوصول إلى المحتوى في وضع عدم الاتصال{'
+'} واختبر معلوماتك من خلال اختبارات الذكاء الاصطناعي في تطبيق واحد لسطح المكتب.",
+  "How it works": "كيف تعمل",
+  "Enter Course Title": "أدخل عنوان الدورة",
+  "Enter the course title for which you want to generate content using AI": "أدخل عنوان الدورة الذي تريد إنشاء محتوى له باستخدام الذكاء الاصطناعي",
+  "AI Generates Sub-Topic": "الذكاء الاصطناعي يولد موضوعات فرعية",
+  "AI will generate topics and subtopics based on the title you provide": "سيقوم الذكاء الاصطناعي بإنشاء موضوعات وموضوعات فرعية بناءً على العنوان الذي تقدمه",
+  "AI will generate video and theory course allowing you to start learning": "سيقوم الذكاء الاصطناعي بإنشاء دورة فيديو ونظرية تسمح لك ببدء التعلم",
+  "Unlock Infinite Knowledge": "افتح المعرفة اللانهائية",
+  "Craft compelling courses effortlessly with our platform, enabling you to create engaging content on any topic. Seamlessly integrate video and theory lectures for a comprehensive learning experience, fostering effective education in just a few clicks": "أنشئ دورات مقنعة دون عناء مع منصتنا ، مما يتيح لك إنشاء محتوى جذاب في أي موضوع. قم بدمج محاضرات الفيديو والنظرية بسلاسة لتجربة تعليمية شاملة ، وتعزيز التعليم الفعال ببضع نقرات فقط",
+  "Study Online": "ادرس عبر الإنترنت",
+  "Video & Theory Lecture": "محاضرة فيديو ونظرية",
+  "Create Course": "إنشاء دورة",
+  "Create Course on Any Topic": "إنشاء دورة في أي موضوع",
+  "Write your terms here in HTML format": "اكتب الشروط الخاصة بك هنا بتنسيق HTML",
+  "logo": "شعار"
 }

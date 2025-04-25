@@ -9,8 +9,10 @@ import { AiFillMessage } from "react-icons/ai";
 import { IoIosDocument } from "react-icons/io";
 import { Sidebar } from 'flowbite-react';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const AdminSidebarMobile = ({ isSidebarOpen }) => {
+    const { t } = useTranslation();
 
     const style = {
         "root": {
@@ -67,47 +69,47 @@ const AdminSidebarMobile = ({ isSidebarOpen }) => {
             <Sidebar.Items className='mt-6'>
                 <div className='flex flex-row items-center' onClick={redirectDashBoard}>
                     <MdSpaceDashboard size={20} />
-                    <p className='font-bold text-base ml-2'>DashBoard</p>
+                    <p className='font-bold text-base ml-2'>{t("DashBoard")}</p>
                 </div>
                 <div className='flex flex-row items-center mt-6' onClick={redirectUsers}>
                     <FaUsers size={20} />
-                    <p className='font-bold text-base ml-2'>Users</p>
+                    <p className='font-bold text-base ml-2'>{t("Users")}</p>
                 </div>
                 <div className='flex flex-row items-center mt-6' onClick={redirectCourses}>
                     <PiVideoFill size={20} />
-                    <p className='font-bold text-base ml-2'>Courses</p>
+                    <p className='font-bold text-base ml-2'>{t("Courses")}</p>
                 </div>
                 <div className='flex flex-row items-center mt-6' onClick={redirectPaid}>
                     <FaDollarSign size={20} />
-                    <p className='font-bold text-base ml-2'>Paid Users</p>
+                    <p className='font-bold text-base ml-2'>{t("Paid Users")}</p>
                 </div>
                 <div className='flex flex-row items-center mt-6' onClick={redirectAdmins}>
                     <MdSettingsInputComponent size={20} />
-                    <p className='font-bold text-base ml-2'>Admins</p>
+                    <p className='font-bold text-base ml-2'>{t("Admins")}</p>
                 </div>
                 <div className='flex flex-row items-center mt-6' onClick={redirectContacts}>
                     <AiFillMessage size={20} />
-                    <p className='font-bold text-base ml-2'>Contacts</p>
+                    <p className='font-bold text-base ml-2'>{t("Contacts")}</p>
                 </div>
                 <div className='flex flex-row items-center mt-6' onClick={redirectTerms}>
                     <IoIosDocument size={18} />
-                    <p className='font-bold text-base ml-2'>Terms</p>
+                    <p className='font-bold text-base ml-2'>{t("Terms")}</p>
                 </div>
                 <div className='flex flex-row items-center mt-6' onClick={redirectPrivacy}>
                     <IoIosDocument size={18} />
-                    <p className='font-bold text-base ml-2'>Privacy</p>
+                    <p className='font-bold text-base ml-2'>{t("Privacy")}</p>
                 </div>
                 <div className='flex flex-row items-center mt-6' onClick={redirectCancel}>
                     <IoIosDocument size={18} />
-                    <p className='font-bold text-base ml-2'>Cancellation</p>
+                    <p className='font-bold text-base ml-2'>{t("Cancellation")}</p>
                 </div>
                 <div className='flex flex-row items-center mt-6' onClick={redirectRefund}>
                     <IoIosDocument size={18} />
-                    <p className='font-bold text-base ml-2'>Refund</p>
+                    <p className='font-bold text-base ml-2'>{t("Refund")}</p>
                 </div>
                 <div className='flex flex-row items-center mt-6' onClick={redirectBilling}>
                     <IoIosDocument size={18} />
-                    <p className='font-bold text-base ml-2'>Subscription & Billing</p>
+                    <p className='font-bold text-base ml-2'>{t("Subscription & Billing")}</p>
                 </div>
             </Sidebar.Items>
         </Sidebar>

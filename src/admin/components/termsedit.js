@@ -3,9 +3,10 @@ import { serverURL } from '../../constants';
 import { Button } from 'flowbite-react';
 import React, { useState } from 'react';
 import { toast } from 'react-toastify';
+import { useTranslation } from 'react-i18next';
 
 const TermsEdit = () => {
-
+    const { t } = useTranslation();
     const [terms, setTerms] = useState(sessionStorage.getItem('terms'));
 
     const handleTextAreaChange = (e) => {
@@ -43,12 +44,12 @@ const TermsEdit = () => {
     return (
         <div>
             <div className='flex flex-row'>
-                <h1 className='text-black font-black text-3xl p-4'>Terms</h1>
-                <Button onClick={saveTerms} className=' text-center dark:bg-white dark:text-black bg-black text-white font-bold rounded-none max-w-md enabled:hover:bg-black enabled:focus:bg-black enabled:focus:ring-transparent dark:enabled:hover:bg-white dark:enabled:focus:bg-white dark:enabled:focus:ring-transparent m-4'>Submit</Button>
+                <h1 className='text-black font-black text-3xl p-4'>{t("Terms")}</h1>
+                <Button onClick={saveTerms} className=' text-center dark:bg-white dark:text-black bg-black text-white font-bold rounded-none max-w-md enabled:hover:bg-black enabled:focus:bg-black enabled:focus:ring-transparent dark:enabled:hover:bg-white dark:enabled:focus:bg-white dark:enabled:focus:ring-transparent m-4'>{t("Submit")}</Button>
             </div>
             <div className="textarea-container">
                 <textarea
-                    placeholder='Write your terms here in HTML format'
+                    placeholder={t('Write your terms here in HTML format')}
                     onChange={handleTextAreaChange}
                     className='textarea focus:ring-transparent focus:border-none border border-none font-normal bg-white rounded-none block w-11/12 dark:bg-black dark:border-white dark:text-white m-4'
                     value={terms}

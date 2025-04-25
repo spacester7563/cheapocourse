@@ -12,9 +12,10 @@ import SubscriptionDetailsRazorpay from '../components/subscriptionDetailsRazorp
 import SubscriptionDetailsStripe from '../components/subscriptionDetailsStripe';
 import SubscriptionDetailsPayStack from '../components/subscriptionDetailsPayStack';
 import SubscriptionDetailsFlutterwave from '../components/subscriptionDetailsFlutterwave';
+import { useTranslation } from 'react-i18next';
 
 const Manage = () => {
-
+    const { t } = useTranslation();
     const [jsonData, setJsonData] = useState({});
     const [isLoading, setIsLoading] = useState(true);
     const [method, setMethod] = useState('');
@@ -97,7 +98,7 @@ const Manage = () => {
                 modifySubscription();
             }
         } else {
-            showToast("You cannot modify the plan use paypal payment method to modify plan");
+            showToast(t("You cannot modify the plan use paypal payment method to modify plan"));
         }
     }
 
@@ -110,14 +111,14 @@ const Manage = () => {
             if (method === 'stripe') {
                 const postURL = serverURL + '/api/stripecancel';
                 await axios.post(postURL, dataToSend).then(res => {
-                    showToast("Subscription Cancelled");
+                    showToast(t("Subscription Cancelled"));
                     sessionStorage.setItem('type', 'free');
                     navigate("/pricing");
                 });
             } else if (method === 'paypal') {
                 const postURL = serverURL + '/api/paypalcancel';
                 await axios.post(postURL, dataToSend).then(res => {
-                    showToast("Subscription Cancelled");
+                    showToast(t("Subscription Cancelled"));
                     sessionStorage.setItem('type', 'free');
                     navigate("/pricing");
                 });
@@ -129,7 +130,7 @@ const Manage = () => {
                 };
                 const postURL = serverURL + '/api/paystackcancel';
                 await axios.post(postURL, dataToSends).then(res => {
-                    showToast("Subscription Cancelled");
+                    showToast(t("Subscription Cancelled"));
                     sessionStorage.setItem('type', 'free');
                     navigate("/pricing");
                 });
@@ -143,7 +144,7 @@ const Manage = () => {
                 };
                 const postURL = serverURL + '/api/flutterwavecancel';
                 await axios.post(postURL, dataToSends).then(res => {
-                    showToast("Subscription Cancelled");
+                    showToast(t("Subscription Cancelled"));
                     sessionStorage.setItem('type', 'free');
                     navigate("/pricing");
                 });
@@ -151,7 +152,7 @@ const Manage = () => {
             else {
                 const postURL = serverURL + '/api/razorpaycancel';
                 await axios.post(postURL, dataToSend).then(res => {
-                    showToast("Subscription Cancelled");
+                    showToast(t("Subscription Cancelled"));
                     sessionStorage.setItem('type', 'free');
                     navigate("/pricing");
                 });
@@ -166,7 +167,7 @@ const Manage = () => {
             <Header isHome={true} className="sticky top-0 z-50" />
             <div className='dark:bg-black flex-1'>
                 <div className='flex-1 flex flex-col items-center justify-center py-8'>
-                    <p className='text-center font-black text-4xl text-black dark:text-white'>Subscription</p>
+                    <p className='text-center font-black text-4xl text-black dark:text-white'>{t("Subscription")}</p>
                     {isLoading && <>
                         <div className="text-center py-10 w-screen flex items-center justify-center">
                             <Spinner size="xl" className='fill-black dark:fill-white' />
@@ -191,10 +192,10 @@ const Manage = () => {
                         </>
                     }
                     <div className='max-w-md'>
-                        <Button isProcessing={processing} processingSpinner={<AiOutlineLoading className="h-6 w-6 animate-spin" />} className='my-2 items-center justify-center text-center dark:bg-white dark:text-black bg-black text-white font-bold rounded-none w-full enabled:hover:bg-black enabled:focus:bg-black enabled:focus:ring-transparent dark:enabled:hover:bg-white dark:enabled:focus:bg-white dark:enabled:focus:ring-transparent' onClick={cancelSubscription}>Cancel Subscription</Button>
+                        <Button isProcessing={processing} processingSpinner={<AiOutlineLoading className="h-6 w-6 animate-spin" />} className='my-2 items-center justify-center text-center dark:bg-white dark:text-black bg-black text-white font-bold rounded-none w-full enabled:hover:bg-black enabled:focus:bg-black enabled:focus:ring-transparent dark:enabled:hover:bg-white dark:enabled:focus:bg-white dark:enabled:focus:ring-transparent' onClick={cancelSubscription}>{t("Cancel Subscription")}</Button>
                     </div>
                     <div className='max-w-md'>
-                        <Button isProcessing={processing2} processingSpinner={<AiOutlineLoading className="h-6 w-6 animate-spin" />} className='my-2 items-center justify-center text-center dark:bg-white dark:text-black bg-black text-white font-bold rounded-none w-full enabled:hover:bg-black enabled:focus:bg-black enabled:focus:ring-transparent dark:enabled:hover:bg-white dark:enabled:focus:bg-white dark:enabled:focus:ring-transparent' onClick={modifySubscription}>Modify Subscription</Button>
+                        <Button isProcessing={processing2} processingSpinner={<AiOutlineLoading className="h-6 w-6 animate-spin" />} className='my-2 items-center justify-center text-center dark:bg-white dark:text-black bg-black text-white font-bold rounded-none w-full enabled:hover:bg-black enabled:focus:bg-black enabled:focus:ring-transparent dark:enabled:hover:bg-white dark:enabled:focus:bg-white dark:enabled:focus:ring-transparent' onClick={modifySubscription}>{t("Modify Subscription")}</Button>
                     </div>
                 </div>
             </div>

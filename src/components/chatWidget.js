@@ -3,8 +3,10 @@ import { IoChatbubbleEllipses } from "react-icons/io5";
 import { IoClose } from "react-icons/io5";
 import { serverURL } from '../constants';
 import axios from 'axios';
+import { useTranslation } from 'react-i18next';
 
 const ChatWidget = ({ defaultMessage, defaultPrompt, mainTopic }) => {
+    const { t } = useTranslation();
     const [isOpen, setIsOpen] = useState(false);
 
     const [messages, setMessages] = useState([]);
@@ -153,7 +155,7 @@ const ChatWidget = ({ defaultMessage, defaultPrompt, mainTopic }) => {
         <div style={chatWidgetStyle}>
             <div style={chatWindowStyle}>
                 <div style={chatHeaderStyle}>
-                    <span>Chat with Ai teacher!</span>
+                    <span>{t("Chat with Ai teacher!")}</span>
                     <button style={closeBtnStyle} onClick={toggleChat}><IoClose /></button>
                 </div>
                 <div style={chatMessagesStyle}>
@@ -176,10 +178,10 @@ const ChatWidget = ({ defaultMessage, defaultPrompt, mainTopic }) => {
                         type="text"
                         value={newMessage}
                         onChange={(e) => setNewMessage(e.target.value)}
-                        placeholder="Type your message..."
+                        placeholder={t("Type your message...")}
                         className='flex-grow border-none border-transparent focus:border-transparent focus:ring-0 text-black dark:text-white bg-white dark:bg-black'
                     />
-                    <button onClick={sendMessage} style={buttonStyle}>Send</button>
+                    <button onClick={sendMessage} style={buttonStyle}>{t("Send")}</button>
                 </div>
             </div>
 

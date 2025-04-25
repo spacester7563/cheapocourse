@@ -1,8 +1,10 @@
 import { Table } from 'flowbite-react';
 import React from 'react';
 import NothingFound from '../../components/nothingfound';
+import { useTranslation } from 'react-i18next';
 
 const ContactTable = ({ datas }) => {
+    const { t } = useTranslation();
 
     return (
         <div className='flex flex-col py-4'>
@@ -10,9 +12,9 @@ const ContactTable = ({ datas }) => {
                 <div className="overflow-x-auto">
                     <Table>
                         <Table.Head className='border-b text-black'>
-                            <Table.HeadCell className='font-black'>Name</Table.HeadCell>
-                            <Table.HeadCell className='font-black'>Email</Table.HeadCell>
-                            <Table.HeadCell className='font-black'>Message</Table.HeadCell>
+                            <Table.HeadCell className='font-black'>{t("Name")}</Table.HeadCell>
+                            <Table.HeadCell className='font-black'>{t("Email")}</Table.HeadCell>
+                            <Table.HeadCell className='font-black'>{t("Message")}</Table.HeadCell>
                         </Table.Head>
                         <Table.Body className="divide-y">
                             {datas.map(contact => (

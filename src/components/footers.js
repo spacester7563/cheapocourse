@@ -52,7 +52,7 @@ const Footers = () => {
         <Footer.Copyright
           className="text-black dark:text-white font-bold"
           href={websiteURL}
-          by={company}
+          by={t("byCompany", {company: company})}
           year={2024}
         />
       </div>

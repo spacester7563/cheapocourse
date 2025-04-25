@@ -36,7 +36,7 @@ const About = () => {
                         <div className="md:w-1/2 h-full">
                             <img
                                 src={slide}
-                                alt="Your Alt Text"
+                                alt={t("Your Alt Text")}
                                 className="w-full h-full object-cover"
                             />
                         </div>
@@ -53,7 +53,7 @@ const About = () => {
                     <p className="text-black mb-2 mt-8 text-center max-md:text-xs dark:text-white">
                         {t("Embark on a journey of innovation and educational excellence with name. Whether you're an educator, a professional, or an organization looking to elevate your learning programs, company is here to support you every step of the way.", {company:company, name:name})}
                     </p>
-                    <Button onClick={redirectContact} className='max-w-xs my-10 items-center justify-center text-center border-black dark:border-white dark:bg-black dark:text-white bg-white text-black font-bold rounded-none w-full enabled:hover:bg-white enabled:focus:bg-white enabled:focus:ring-transparent dark:enabled:hover:bg-black dark:enabled:focus:bg-black dark:enabled:focus:ring-transparent'>{t("Contact")}</Button>
+                    <Button onClick={redirectContact} className='max-w-xs my-10 items-center justify-center text-center border-black dark:border-white dark:bg-black dark:text-white bg-white text-black font-bold rounded-none w-full enabled:hover:bg-black enabled:focus:bg-black enabled:focus:ring-transparent dark:enabled:hover:bg-black dark:enabled:focus:bg-black dark:enabled:focus:ring-transparent'>{t("Contact")}</Button>
                 </div>
             </div>
             <Footers className="sticky bottom-0 z-50" />

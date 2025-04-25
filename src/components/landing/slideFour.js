@@ -1,23 +1,24 @@
 import React from "react";
 import PricingPlan from "../pricing";
 import { FreeType, FreeCost, FreeTime, MonthType, MonthTime, MonthCost, YearType, YearCost, YearTime } from '../../constants';
+import { useTranslation } from 'react-i18next';
 
 const SlideFour = () => {
-
-    const freeData = `{"type": "${FreeType}", "cost": "${FreeCost}", "time": "${FreeTime}", "one": "Generate 5 Sub-Topics", "two": "Create Unlimited Course", "three": "Video & Theory Course", "four": "Lifetime access", "five": "Theory & Image Course", "six": "Course In 23+ Languages", "seven": "Ai Teacher Chat"}`;
+    const { t } = useTranslation();
+    const freeData = `{"type": "${FreeType}", "cost": "${FreeCost}", "time": "${FreeTime}", "one": "${t("Generate 5 Sub-Topics")}", "two": "${t("Create Unlimited Course")}", "three": "${t("Video & Theory Course")}", "four": "${t("Lifetime access")}", "five": "${t("Theory & Image Course")}", "six": "${t("Course In 23+ Languages")}", "seven": "${t("Ai Teacher Chat")}"}`;
     const parsedFreeData = JSON.parse(freeData);
 
-    const monthData = `{"type": "${MonthType}", "cost": "${MonthCost}", "time": "/${MonthTime}", "one": "Generate 10 Sub-Topics", "two": "Create Unlimited Course", "three": "Video & Theory Course", "four": "1 Month Access", "five": "Theory & Image Course", "six": "Course In 23+ Languages", "seven": "Ai Teacher Chat"}`;
+    const monthData = `{"type": "${MonthType}", "cost": "${MonthCost}", "time": "/${MonthTime}", "one": "${t("Generate 10 Sub-Topics")}", "two": "${t("Create Unlimited Course")}", "three": "${t("Video & Theory Course")}", "four": "${t("1 Month Access")}", "five": "${t("Theory & Image Course")}", "six": "${t("Course In 23+ Languages")}", "seven": "${t("Ai Teacher Chat")}"}`;
     const parsedMonthData = JSON.parse(monthData);
 
-    const YearData = `{"type": "${YearType}", "cost": "${YearCost}", "time": "/${YearTime}", "one": "Generate 10 Sub-Topics", "two": "Create Unlimited Course", "three": "Video & Theory Course", "four": "1 Year Access", "five": "Theory & Image Course", "six": "Course In 23+ Languages", "seven": "Ai Teacher Chat"}`;
+    const YearData = `{"type": "${YearType}", "cost": "${YearCost}", "time": "/${YearTime}", "one": "${t("Generate 10 Sub-Topics")}", "two": "${t("Create Unlimited Course")}", "three": "${t("Video & Theory Course")}", "four": "${t("1 Year Access")}", "five": "${t("Theory & Image Course")}", "six": "${t("Course In 23+ Languages")}", "seven": "${t("Ai Teacher Chat")}"}`;
     const parsedYearData = JSON.parse(YearData);
 
     return (
         <div className="dark:bg-black py-14">
             <div className="px-11 items-start justify-start text-start">
-                <div className="text-4xl max-md:text-2xl font-black dark:text-white max-md:text-center">Pricing</div>
-                <p className="py-3 font-medium max-md:text-xs dark:text-white max-md:text-center">Choose the right plan for your education and future</p>
+                <div className="text-4xl max-md:text-2xl font-black dark:text-white max-md:text-center">{t("Pricing")}</div>
+                <p className="py-3 font-medium max-md:text-xs dark:text-white max-md:text-center">{t("Choose the right plan for your education and future")}</p>
             </div>
             <div className="lg:flex py-10">
 
